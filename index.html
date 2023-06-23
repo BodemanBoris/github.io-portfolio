@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Welcome to my interactive portfolio! Explore my projects, learn more about me, and get in touch. Discover how I use HTML, CSS, and JavaScript to create engaging websites and applications. Request a project or ask me anything through the contact form.">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/stack.css" />
+    <link rel="stylesheet" href="/css/proyectos.css" />
+    <link rel="stylesheet" href="/css/contacto.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/template.css" />
+    <link rel="stylesheet" href="/css/mq768.css" />
+    <link rel="stylesheet" href="/css/mq1100.css" />
+    <title>Boris Bodeman [Portfolio]</title>
+  </head>
+
+  <style>
+    /* *********************** */
+    /* ********* GENERAL ********** */
+    /* *********************** */
+
+    html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 376px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.section {
+  height: 100vh;
+  min-height: auto;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+  font-family: "Fjalla One", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  color: blueviolet;
+}
+
+hr {
+  margin: 20px 10px 20px 10px;
+}
+label {
+  color: grey;
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+    /* *********************** */
+    /* ********* header ********** */
+    /* *********************** */
+
+    header {
+  width: 100%;
+  height: 40vh;
+  background-image: url("assets/header-bg.jpg");
+  background-size: cover;
+}
+.nav-title {
+  text-shadow: 2px 2px 6px white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.header-title__container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.header-title {
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 20px black;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-logo * {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.btn-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(225, 126, 255);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  position: fixed;
+  z-index: 999;
+  bottom: 2vh;
+  right: 3vw;
+}
+
+.menu-icon__foto {
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-menu:hover {
+  cursor: pointer;
+  background-color: rgb(255, 214, 255);
+}
+.btn-menu div:hover {
+  cursor: pointer;
+  background-color: rgb(165, 103, 223);
+}
+
+.nav-menu__container {
+  padding-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+  transform: translate(0, -100%);
+}
+.nav-menu__container.is-active {
+  transform: translate(0, 0);
+}
+.nav-menu__container li {
+  height: auto;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s;
+  border-radius: 15px;
+}
+
+.nav-menu__container li:hover {
+  background-color: rgb(25, 25, 25);
+  transform: scale(1.05);
+}
+.nav-link {
+  color: white;
+  font-size: 30px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.nav-img {
+  margin: auto;
+}
+
+
+    .me-img {
+  width: 30%;
+  float: left;
+  margin: 15px;
+  filter: drop-shadow(6px 4px 8px grey);
+}
+.me-img {
+  width: auto;
+  height: 120px;
+}
+.about-text {
+  padding: 20px;
+}
+
+
+    /* *********************** */
+    /* ********* stack ********** */
+    /* *********************** */
+    .stack {
+  height: auto;
+}
+.stack-container {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+.current-stack {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.current-stack img {
+  transition: all 0.4s ease-in-out;
+  margin: 5px;
+}
+.current-stack img:hover {
+  cursor: pointer;
+  background-color: rgb(217, 217, 217);
+  border-radius: 5px;
+  transform: scale(1.3);
+}
+
+.tools__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-tools {
+  width: 90%;
+  height: auto;
+}
+.future-stack__text {
+  padding: 10px;
+}
+
+.future-stack__icon {
+  float: right;
+  font-size: 60px;
+  color: grey;
+  display: inline;
+  margin: 10px;
+  margin-right: 25px;
+}
+.fa-react {
+  text-shadow: 2px 2px 5px rgb(88, 88, 255);
+}
+
+.fa-node {
+  text-shadow: 2px 2px 5px rgb(58, 182, 83);
+}
+.tecnologias__text {
+  color: gray;
+}
+
+
+    /* *********************** */
+    /* ********* PROYECTOS ********** */
+    /* *********************** */
+.proyectos {
+  height: auto;
+  min-height: 700px;
+  position: relative;
+}
+
+.proyectos h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+.card-proyect {
+  margin-top: 20px;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 2px 2px 8px 0px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+  position: absolute;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.card-proyect:hover {
+  transform: scale(1.005);
+}
+.card-proyect h3 {
+  margin: 10px;
+  text-shadow: 2px 2px 5px grey;
+}
+.proyectos-img {
+  width: 90%;
+  margin-top: 15px;
+}
+.card-proyect p {
+  padding: 5px;
+  margin: 10px;
+}
+.arrow-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.arrow-img {
+  width: 40px;
+  display: flex;
+}
+
+.arrow-izq {
+  position: absolute;
+  top: 50%;
+  transform: rotate(268deg);
+}
+
+.arrow-der {
+  right: 0;
+  top: 50%;
+  position: absolute;
+  transform: rotate(90deg);
+}
+
+.arrow-izq:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transform: rotate(268deg);
+}
+
+.arrow-der:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transform: rotate(90deg);
+}
+.proyec-link {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.proyect-btn {
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.proyect-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+    /* *********************** */
+    /* ********* CONTACTO ********** */
+    /* *********************** */
+    .contacto {
+  margin-top: 25px;
+  height: auto;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin-top: 10px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+textarea {
+  margin-top: 20px;
+  resize: none;
+  font-family: sans-serif;
+  padding: 10px;
+}
+form * {
+  font-size: 18px;
+}
+.form__alert {
+  color: grey;
+  margin: 15px;
+  font-family: arial;
+}
+.contacto__desc {
+  padding: 15px;
+}
+.submit__btn {
+  margin: 25px 0;
+  cursor: pointer;
+}
+.span-none {
+  display: none;
+}
+.contact-form-error {
+  text-align: center;
+  margin-top: -1rem;
+  font-size: 80%;
+  padding: 5px;
+  background-color: rgb(255, 89, 89);
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+    /* *********************** */
+    /* ********* footer ********** */
+    /* *********************** */
+
+    footer {
+  background-color: black;
+  height: auto;
+}
+.footer-title,
+.footer-text {
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px gray;
+}
+
+.social-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+i {
+  margin: 10px;
+  font-size: 35px;
+  color: white;
+}
+
+.social-div a {
+  margin: 0px 15px 40px 15px;
+}
+.contact-info address {
+  color: white;
+  text-align: center;
+}
+
+
+    /* *********************** */
+    /* ********* template ********** */
+    /* *********************** */
+
+    .tools__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.tools__img {
+  width: 70%;
+}
+.tools__title {
+  text-align: center;
+  font-size: 2rem;
+}
+.tools__desc {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+    /* *********************** */
+    /* ********* MQ 768px ********** */
+    /* *********************** */
+
+    @media (min-width: 768px) {
+  body {
+    min-width: 768px;
+  }
+
+  .about-container {
+    height: auto;
+  }
+  .proyectos {
+    height: 100%;
+    margin-bottom: 100px;
+  }
+  .card-proyect {
+    height: 100%;
+  }
+  .proyectos-img {
+    width: 75%;
+    height: auto;
+  }
+  .contacto {
+    margin-top: 50px;
+  }
+}
+
+
+    /* *********************** */
+    /* ********* MQ 1100px ********** */
+    /* *********************** */
+
+    @media screen and (min-width: 1099px) {
+  body {
+    width: 1099px;
+  }
+
+  .header {
+    height: 100vh;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .header-title__container {
+    height: auto;
+  }
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
+  .nav-menu__container {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    transform: translate(0, -30%);
+    justify-content: end;
+    align-items: start;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+  .about-container {
+    height: auto;
+  }
+  .btn-menu {
+    display: none;
+  }
+
+  .tools__img {
+    max-width: 485px;
+  }
+  .proyectos {
+    height: 100%;
+    margin-bottom: 100px;
+  }
+  .card-proyect {
+    height: 100%;
+  }
+  .proyectos-img {
+    width: 60%;
+    max-height: 485px;
+    height: auto;
+  }
+  .contacto {
+    margin-top: 50px;
+  }
+  .contact {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+  </style>
+
+<!-- 
+  ************************************
+  ****************BODY****************
+  ************************************ 
+-->
+
+  <body>
+
+    <!--  ************  HEADER SECTION ************ -->
+
+    <header class="header" id="inicio">
+      <nav class="nav-container">
+        <div class="nav-logo">
+          <img class="nav-img" src="assets/icons8-desarrollo-web-64.png" alt="" />
+          <h2 class="nav-title">BWeb</h2>
+        </div>
+        <div class="nav-menu">
+          <ul class="nav-menu__container">
+            <li><a href="#inicio" class="nav-link">Inicio</a></li>
+            <li><a href="#acerca" class="nav-link">Nosotros</a></li>
+            <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
+            <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+            <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="btn-menu">
+          <img class="menu-icon__foto" src="assets/menu-icon.png" alt="">
+        </div>
+      </nav>
+      <div class="header-title__container">
+        <h1 class="header-title">WEB DEVELOPMENT</h1>
+      </div>
+    </header>
+
+      <hr>
+    <!--  ************  MAIN SECTION ************ -->
+
+    <main>
+      <section class="about-container section">
+        <h2 id="acerca">Acerca de mi</h2>
+        <p class="about-text">Mi nombre es Boris Bodeman. Soy estudiante autonomo de programacion web. Vengo de trabajos en fabrica y busco cambiar mi rumbo laboral a la programcion. Veo en este mundo un futuro instantaneo donde, si no nos adaptamos, quedamos atras</p>
+        <img class="me-img" src="assets/boris.png" alt="" />
+        <p class="about-text">
+          Mi conocimiento profundo de HTML, CSS y JavaScript me permite crear
+          interfaces de usuario dinámicas y atractivas. Soy un comunicador
+          eficaz y me apasiona trabajar en colaboración con diseñadores y otros
+          desarrolladores para ofrecer soluciones de alta calidad que cumplan
+          con los requisitos del cliente.
+          <br />
+          <br />
+          Estoy constantemente buscando oportunidades para aprender y mejorar
+          mis habilidades técnicas, y estoy al tanto de las últimas tendencias y
+          mejores prácticas en el campo del desarrollo web. Mi objetivo es
+          siempre superar las expectativas y entregar productos eficientes,
+          escalables y seguros.
+          <br />
+          <br />
+          Si estás buscando un Front End Developer altamente capacitado y
+          apasionado, estoy aquí para ayudarte a alcanzar tus objetivos. No
+          dudes en contactarme y juntos podemos crear soluciones web
+          excepcionales.
+        </p>
+      </section>
+
+      <hr>
+      <!--  ************  STACK SECTION  ************ -->
+
+      <section class="stack section">
+        <h2 id="tecnologias">Mis herramientas</h2>
+        <p class="tecnologias__text"> <small>Arrastra/haz clic en
+          <br> los iconos para mas detalle</small></p>
+        <div class="stack-container">
+          <div class="current-stack">
+            <img class="icon-img" data-title="HTML 5" data-img="assets/ejemplo html.png" 
+            data-info="En español lenguaje de marcado de hipertexto, hace referencia al lenguaje de marcado para la elaboración de páginas web. " 
+            src="assets/icons8-html-48.png" alt="logo html" />
+            <img class="icon-img" data-title="CSS 3" data-img="assets/ejemplo-css.png" 
+            data-info="En español `Hojas de Estilo en Cascada` es el código que usas para dar estilo a tu página web." 
+            src="assets/icons8-css-48.png" alt="Logo css" />
+            <img class="icon-img" data-title="JavaScript" data-img="assets/ejemplo-js.png"
+            data-info="JavaScript es el lenguaje de programación que debes usar para añadir características interactivas a tu sitio web" 
+            src="assets/icons8-javascript-48.png" alt="Logo JavaScript" />
+            <img class="icon-img"  data-title="Git"
+            data-info="Git es un software de control de versiones. Lleva registro de los cambios en archivos de computadora incluyendo coordinar el trabajo que varias personas realizan sobre archivos compartidos en un repositorio de código. " data-img="assets/ejemplo-git.png"
+            src="assets/icons8-git-48.png" alt="Logo Git" />
+            <img class="icon-img"  data-title="GitHub" data-img="assets/ejemplo-github.png"
+            data-info="Github es un portal creado para alojar el código de las aplicaciones de cualquier desarrollador" src="assets/icons8-github-48.png" alt="Logo GitHub" />
+          </div>
+          <div class="tools__container">
+            <h3 class="tools__title"></h3>
+            <img class="tools__img" src="assets/web-developer.svg" alt="">
+            <p class="tools__desc"></p>
+          </div>
+        </div>
+        <div class="future-stack">
+          <h3 class="future-stack__title">Futuro Stack en mi portfolio</h3>
+          <h4>REACT</h4>
+          <i class="fa-brands fa-react future-stack__icon"></i>
+          <p class="future-stack__text">
+            <b>React</b> es una biblioteca de JavaScript de código abierto y basada en componentes para construir interfaces de usuario interactivas y reutilizables. Permite la creación de aplicaciones de una sola página (SPA) eficientes, donde los componentes se actualizan de manera eficiente según los cambios en los datos, brindando una experiencia de usuario rápida y fluida. 
+          </p>
+          <br>
+          <a rel=”noopener noreferrer” target="_blank" href="https://es.react.dev">https://es.react.dev</a>
+
+          <h4>NODE JS</h4>
+          <i class="fa-brands fa-node future-stack__icon"></i>
+          <p class="future-stack__text">
+            <b>Node.js</b> es una poderosa plataforma que permite a los desarrolladores utilizar JavaScript tanto en el Front-End como en el Back-End, lo que simplifica la transición entre ambas partes de una aplicación web y brinda un rendimiento eficiente y escalable.
+          </p>
+          <br>
+          <a rel=”noopener noreferrer” target="_blank"  href="https://nodejs.org/en/about">https://nodejs.org/en/about</a>
+        </div>
+      </section>
+
+      <hr>
+<!--  ************  PROYECTOS SECTION ************ -->
+
+      <section class="proyectos section">
+        <h2 id="proyectos">Proyectos</h2>
+            <img class="arrow-img arrow-izq" src="assets/flecha.png" alt="">
+            <img class="arrow-img arrow-der" src="assets/flecha.png" alt="">
+
+        <div class="card-proyect proyect-active">
+          <h3>Encriptador</h3>
+          <div class="arrow-container">
+          </div>
+          <img class="proyectos-img" src="assets/encriptador-one.png" alt="" />
+          <p>
+            primer proyecto credo con lo aprendido en el curso de Oracle y Alura Latam Programa One Next Education. 
+            <br>
+            Pagina web para realizar encriptado y desencriptado de mensajes
+          </p>
+          <a class="proyec-link"  href="https://bodemanboris.github.io/.github.io-encrypter-one/" target="_blank">
+          <button class="proyect-btn">VER PROYECTO</button>
+          </a>
+        </div>
+
+        <div class="card-proyect">
+          <h3>Memorama</h3>
+          <div class="arrow-container">
+          </div>
+          <img class="proyectos-img" src="assets/memorama.png" alt="" />
+          <p>
+            Juego de memoria utilizando HTML, CSS y JavaScript. 
+            <br>
+            Practica para profundizar conocimientos y mejorar habilidades de multiples funciones
+          </p>
+          <a class="proyec-link"  href="https://bodemanboris.github.io/github.io.memotest/" target="_blank">
+          <button class="proyect-btn">VER PROYECTO</button>
+          </a>
+        </div>
+
+        <div class="card-proyect">
+          <h3>Calculadora</h3>
+          <div class="arrow-container">
+          </div>
+          <img class="proyectos-img" src="assets/calculadora.png" alt="" />
+          <p>
+            Calculadora funcional. Permite hacer las operaciones basicas y cambiar entre nigth mode y light mode.
+            <br>
+
+          </p>
+          <a class="proyec-link"  href="https://bodemanboris.github.io/github.io-calculadora/" target="_blank">
+          <button class="proyect-btn">VER PROYECTO</button>
+          </a>
+        </div>
+
+        <div class="card-proyect">
+          <h3>Landing Page Alura</h3>
+          <div class="arrow-container">
+          </div>
+          <img class="proyectos-img" src="assets/barber-alura.png" alt="" />
+          <p>
+            Primera landing page utilizando las herramientas aprendidas en el curso de Alura Latam.
+            <br>
+            Landig Page Responsive adaptada a dispositivos Moviles y Desktop
+          </p>
+          <a class="proyec-link"  href="https://bodemanboris.github.io/github.io-alurabarber/" target="_blank">
+          <button class="proyect-btn">VER PROYECTO</button>
+          </a>
+        </div>
+      </section>
+
+      <hr>
+
+<!--  ****************** CONTACTO **************** -->
+
+      <section class="contacto section">
+        <h2 id="contacto">Contacto</h2>
+        <p class="contacto__desc">¡Gracias por tu interés! Si deseas comunicarte conmigo para discutir oportunidades de colaboración, proyectos emocionantes o simplemente para compartir ideas, no dudes en contactarme. Estoy abierto a nuevas oportunidades y siempre estoy dispuesto a conectarme con personas apasionadas por el desarrollo web. Puedes enviarme un mensaje a través del formulario de contacto a continuación, y te responderé lo antes posible. ¡Espero con ansias escuchar de ti y comenzar una conversación inspiradora!</p>
+        <br>
+        <p class="form__alert"><small>Los campos con (*) son obligatorios</small></p>
+        <div class="contact-container">
+          <form  action="https://formsubmit.co/borisbodemand@hotmail.com" method="POST" class="contact">
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" name="nombre" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Solo caracteres alfabeticos"/>
+            <label for="email">Email *</label>
+            <input type="email" name="email" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" title="Formato de ejemplo: 'nombre@nombre.com'"/>
+            <label for="telefono">Numero de telefono o WhatsApp </label>
+            <input id="telefono" type="tel" name="phone"/>
+            <label for="textArea">Consulta o comentario *</label>
+            <textarea title="Maximo 255 caracteres" data-pattern="^.{1,255}$" id="textArea" name="contact-text" id="" cols="30" rows="5" required placeholder="Max. 255 caracteres"></textarea>
+            <input class="submit__btn" type="submit">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Muchas gracias por contactarse con nosotros. En breve analizaremos su comentario y daremos respuesta">
+          </form>
+          <br>
+        </div>
+      </section>
+    </main>
+    <aside></aside>
+   
+      <hr>
+<!--  ************  FOOTER SECTION ************ -->
+
+    <footer class="pie-pagina">
+      <h3 class="footer-title">Creado por Boris Bodeman &copy;</h3>
+
+          <div class="contact-info">
+            <address>Buenos Aires - Argentina</address>
+          </div>
+      <div class="social-div">
+        <a
+          href=https://github.com/BodemanBoris
+          target="_b
+        "
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/boris-bodeman-954153a1/"
+          target="_b
+        "
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+    </footer>
+
+<!--  ************ SCRIPT ************ -->
+
+    <script>
+      const d = document;
+
+      function formValidation() {
+  const $form = d.querySelector(".contact");
+  const $input = d.querySelectorAll(".contact [required]");
+
+  $input.forEach((input) => {
+    const span = d.createElement("span");
+    span.id = input.name;
+    span.textContent = input.title;
+    input.insertAdjacentElement("afterend", span);
+    span.classList.add("contact-form-error", "span-none");
+  });
+
+  d.addEventListener("keyup", (e) => {
+    if (e.target.matches(".contact [required]")) {
+      let input = e.target;
+      let pattern = input.pattern || input.dataset.pattern;
+
+      //console.log(input, pattern);
+
+      if (pattern && input.value !== "") {
+        let regExp = new RegExp(pattern);
+        return !regExp.exec(input.value)
+          ? d.getElementById(input.name).classList.add("is-active")
+          : d.getElementById(input.name).classList.remove("is-active");
+      }
+    }
+  });
+}
+
+      function responsiveSlider() {
+  const $btnPrev = d.querySelector(".arrow-izq");
+  const $btnNext = d.querySelector(".arrow-der");
+  const $cards = d.querySelectorAll(".card-proyect");
+
+  let i = 0;
+
+  d.addEventListener("click", (e) => {
+    if (e.target === $btnPrev) {
+      $cards[i].classList.remove("proyect-active");
+      i--;
+
+      if (i < 0) {
+        i = $cards.length - 1;
+      }
+      $cards[i].classList.add("proyect-active");
+    }
+
+    if (e.target === $btnNext) {
+      $cards[i].classList.remove("proyect-active");
+      i++;
+      if (i >= $cards.length) {
+        i = 0;
+      }
+      $cards[i].classList.add("proyect-active");
+    }
+  });
+}
+
+      function showStack() {
+  const $stack = d.querySelectorAll(".icon-img");
+  const $toolsImg = d.querySelector(".tools__img");
+  const $toolsTitle = d.querySelector(".tools__title");
+  const $toolsDesc = d.querySelector(".tools__desc");
+
+  $stack.forEach((tech) => {
+    tech.addEventListener("mouseover", (e) => {
+      $toolsImg.src = e.target.dataset.img;
+      $toolsTitle.innerText = e.target.dataset.title;
+      $toolsDesc.innerText = e.target.dataset.info;
+    });
+  });
+
+  $stack.forEach((tech) => {
+    tech.addEventListener("mouseleave", (e) => {
+      $toolsImg.src = "assets/web-developer.svg";
+      $toolsTitle.innerText = "";
+      $toolsDesc.innerText = "";
+    });
+  });
+}
+
+      function titleChange() {
+  const $mainTitle = d.querySelector(".header-title");
+
+  $mainTitle.addEventListener("mouseenter", (e) => {
+    $mainTitle.textContent = "Front End Developer";
+    $mainTitle.style.color = "blueviolet";
+    $mainTitle.style.textShadow = "2px 2px 5px white";
+  });
+
+  $mainTitle.addEventListener("mouseleave", (e) => {
+    $mainTitle.textContent = "WEB DEVELOPMENT";
+    $mainTitle.style.color = "white";
+    $mainTitle.style.textShadow = "2px 2px 5px gray";
+  });
+}
+
+      function toggleMenu() {
+  const $btnMenu = d.querySelector(".btn-menu");
+  const $menu = d.querySelector(".nav-menu__container");
+  const $navLink = d.querySelectorAll(".nav-link");
+  const $iconoMenu = d.querySelector(".menu-icon__foto");
+
+  $btnMenu.addEventListener("click", (e) => {
+    $menu.classList.toggle("is-active");
+    if ($menu.classList.contains("is-active")) {
+      $iconoMenu.src = "assets/cartelclose.png";
+    } else {
+      $iconoMenu.src = "assets/menu-icon.png";
+    }
+  });
+
+  $navLink.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      $menu.classList.toggle("is-active");
+      $iconoMenu.src = "assets/menu-icon.png";
+    });
+  });
+}
+
+      
+
+      d.addEventListener("DOMContentLoaded", (e) => {
+  toggleMenu();
+  titleChange();
+  responsiveSlider();
+  showStack();
+  formValidation();
+});
+
+    </script>
+  </body>
+
+</html>
